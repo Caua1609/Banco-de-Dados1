@@ -43,3 +43,67 @@ Normalização é o processo de organização de dados em um banco de dados. Iss
 |       106       | Victor Hugo      | Traíra | 1kg  |     R$100,00         |
 |       107       | Paula Duarte     |Pirarara| 30kg |     R$900,00         |
 |       108       | Cauã José        |Tucunaré| 9kg  |     R$900,00         |
+
+---
+### Primeira Forma(1FN)
+A tabela ja está em 1FN pois cada célula contém seu próprio valor, e cada linha tem sua chave primária
+
+**Tabela 1**
+
+| Id da pescaria  | Nome do pescador | Peixe  | Peso | Valor do Equipamento |
+|-----------------|------------------|--------|------|----------------------|
+|       101       | Cauã José        |Tucunaré| 9kg  |     R$1000,00        |
+|       102       | Rubens Cestari   | Pintado| 20kg |     R$800,00         |
+|       103       | Dolores Duarte   |Tucunaré| 5kg  |     R$200,00         |
+|       104       | Juliano Rocha    | Piau   | 2kg  |     R$200,00         |
+|       105       | Amanda Cestari   | Mandi  | 40kg |     R$700,00         |
+|       106       | Victor Hugo      | Traíra | 1kg  |     R$100,00         |
+|       107       | Paula Duarte     |Pirarara| 30kg |     R$900,00         |
+|       108       | Cauã José        |Tucunaré| 9kg  |     R$900,00         |
+
+---
+### Segunda Forma(2FN)
+Para estar na 2FN, todas as colunas que não são a chave primária devem depender da chave primária completa 
+
+#### Vamos analizar as colunas:
+1. **Nome do pescador**: Não depende de nenhuma das informações, somente de si mesmo
+2. **Peixe**: Mesma coisa, essa informação é sobre o tipo do peixe
+3. **Peso**: Isso sim depende de outra informação, pois o peso vai de cada peixe!!
+4. **Valor do equipamento**: Este valor esta associado ao pescador, pois quem irá comprar será ele.
+#### Para resolver isso, vamos criar novas tabelas para agrupar as informações que não dependem diretamente do Id da pescaria.
+
+#### Tabela de Pescadores:
+1. ID_Pescador (Chave Primária)
+2. Nome_Pescador
+3. Valor_do_Equipamento
+
+**Observação**: Perceba que criamos um ID para cada pescador. Isso evita problemas, por exemplo, se dois pescadores diferentes se chamarem "Cauã José".
+
+#### Tabela de Peixes:
+1. ID_Peixe (Chave Primária)
+2. Nome_Peixe
+
+**Observação**: O nome do peixe é o que o identifica, mas é melhor usar um ID para evitar erros de digitação e facilitar as referências.
+
+#### Tabela de Pescarias:
+1. ID_Pescaria (Chave Primária)
+2. ID_Pescador (Chave Estrangeira)
+3. ID_Peixe (Chave Estrangeira)
+
+**Observação**: Agora, o Id da pescaria se relaciona com o pescador e o peixe usando as chaves estrangeiras.
+
+#### Chave Primária
+A chave primária é um campo (ou um conjunto de campos) que identifica de forma única cada registro (linha) em uma tabela. Ela é essencial para garantir a integridade dos dados e evitar duplicatas. Pense nela como o CPF de uma pessoa: cada CPF é único e identifica uma única pessoa.
+
+#### Chave Estrangeira
+A chave estrangeira é um campo (ou um conjunto de campos) em uma tabela que faz referência à chave primária de outra tabela. Sua principal função é estabelecer um relacionamento entre as tabelas. Ela garante a "integridade referencial", ou seja, que você não insira dados em uma tabela que não tenham um correspondente na tabela original.
+
+**Tabela 2**:
+| Id Peixe  | Peixe  | 
+|-----------|--------|
+|    101    |        |
+|    102    |        |
+|    103    |        |
+|    104    |        |
+|    105    |        |
+|    106    |        |
