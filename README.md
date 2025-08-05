@@ -123,3 +123,118 @@ Para estar na 3FN, não pode haver dependências transitivas. Ou seja, nenhuma c
 |       106       |        6       |      5    |   1kg   | 
 |       107       |        7       |      6    |   30kg  | 
 |       108       |        1       |      1    |   9kg   |
+
+---
+### Json 
+```
+{
+  "pescarias": [
+    {
+      "id_pescaria": 101,
+      "pescador": {
+        "nome": "Cauã José"
+      },
+      "peixe": {
+        "nome": "Tucunaré",
+        "peso_kg": 9
+      },
+      "equipamento": {
+        "valor_reais": 1000.00
+      }
+    },
+    {
+      "id_pescaria": 102,
+      "pescador": {
+        "nome": "Rubens Cestari"
+      },
+      "peixe": {
+        "nome": "Pintado",
+        "peso_kg": 20
+      },
+      "equipamento": {
+        "valor_reais": 800.00
+      }
+    },
+    {
+      "id_pescaria": 103,
+      "pescador": {
+        "nome": "Dolores Duarte"
+      },
+      "peixe": {
+        "nome": "Tucunaré",
+        "peso_kg": 5
+      },
+      "equipamento": {
+        "valor_reais": 200.00
+      }
+    },
+    {
+      "id_pescaria": 104,
+      "pescador": {
+        "nome": "Juliano Rocha"
+      },
+      "peixe": {
+        "nome": "Piau",
+        "peso_kg": 2
+      },
+      "equipamento": {
+        "valor_reais": 200.00
+      }
+    },
+    {
+      "id_pescaria": 105,
+      "pescador": {
+        "nome": "Amanda Cestari"
+      },
+      "peixe": {
+        "nome": "Mandi",
+        "peso_kg": 40
+      },
+      "equipamento": {
+        "valor_reais": 700.00
+      }
+    },
+    {
+      "id_pescaria": 106,
+      "pescador": {
+        "nome": "Victor Hugo"
+      },
+      "peixe": {
+        "nome": "Traíra",
+        "peso_kg": 1
+      },
+      "equipamento": {
+        "valor_reais": 100.00
+      }
+    },
+    {
+      "id_pescaria": 107,
+      "pescador": {
+        "nome": "Paula Duarte"
+      },
+      "peixe": {
+        "nome": "Pirarara",
+        "peso_kg": 30
+      },
+      "equipamento": {
+        "valor_reais": 900.00
+      }
+    },
+    {
+      "id_pescaria": 108,
+      "pescador": {
+        "nome": "Cauã José"
+      },
+      "peixe": {
+        "nome": "Tucunaré",
+        "peso_kg": 9
+      },
+      "equipamento": {
+        "valor_reais": 900.00
+      }
+    }
+  ]
+}
+```
+### Por que a normalização não é necessária aqui?
+Nessa estrutura, não precisa de normalização porque ela foi pensada para ser um documento completo e autossuficiente.
