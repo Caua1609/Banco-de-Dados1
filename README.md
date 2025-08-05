@@ -101,9 +101,25 @@ A chave estrangeira é um campo (ou um conjunto de campos) em uma tabela que faz
 **Tabela 2**:
 | Id Peixe  | Peixe  | 
 |-----------|--------|
-|    101    |        |
-|    102    |        |
-|    103    |        |
-|    104    |        |
-|    105    |        |
-|    106    |        |
+|    101    |Tucunaré|
+|    102    | Pintado|
+|    103    | Piau   |
+|    104    | Mandi  |
+|    105    | Traíra |
+|    106    |Pirarara|
+
+---
+### Terceira Forma(3FN)
+Para estar na 3FN, não pode haver dependências transitivas. Ou seja, nenhuma coluna que não seja a chave primária pode depender de outra coluna que também não seja a chave primária.
+
+**Tabela 3**
+| Id da pescaria  | Id do Pescador | ID Peixe  | Peso    | 
+|-----------------|----------------|-----------|---------|
+|       101       |        1       |      1    |   9kg   | 
+|       102       |        2       |      2    |   20kg  |
+|       103       |        3       |      1    |   5kg   | 
+|       104       |        4       |      3    |   2kg   | 
+|       105       |        5       |      4    |   40kg  |   
+|       106       |        6       |      5    |   1kg   | 
+|       107       |        7       |      6    |   30kg  | 
+|       108       |        1       |      1    |   9kg   |
